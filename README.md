@@ -1,6 +1,11 @@
 # TigerScan - Email Security Scanner
 *Software Engineering Project - Rowan University*
 
+## Notes On Security
+There are two security concerns that would need to be addressed if this were to actually be implemented:
+1. The salting feature for the password is not optimally implemented.  The salt is the same each time the password is hashed, and is dependent on the password itself, rather than being independent (randomly generated).
+2. The symmetric encryption key for the database is hard coded into the program.  A ram-dump could be triggered to retrieve this password.
+
 ## Instructions
 ### Usage
 The TigerScan system is easy to use! Simply add files associated to your email to the list in the main window and click the Scan All button. Each file will be scanned and given a score according to how sensitive its content is. If a file reaches the threshold, the email cannot be sent.
